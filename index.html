@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7e99a9e738.js" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <!-- Navbar section starts here -->
+        <nav class="navBar">
+            <div class="logoMainContainer">
+                <div class="logoContainer">
+                    <img src="https://imgcdn.stablediffusionweb.com/2024/7/3/f3533321-0386-4381-b6d1-1f4b1d9bc062.jpg" alt="No_Img">
+                </div>
+                <h3><i>A</i>rabian<i>L</i>ingo</h3>
+            </div>
+            <div class="profileContainer">
+                <img src="Ninja_Logo_Avatar.jpg" alt="No_Img">
+            </div>
+        </nav>
+    <!-- Navbar section ends here -->
+    <!-- Tabs section starts here -->
+        <section class="tabsContainer">
+            <ul class="tabsList">
+                <li class="textTab"><a href="#"><i class="fa-solid fa-language"></i> Text</a></li>
+                <li class="numeralTab"><a href="#"><i class="fa-solid fa-arrow-up-1-9"></i> Numerals</a></li>
+                <li class="documentTab"><a href="#"><i class="fa-solid fa-image"></i> Images</a></li>
+            </ul>
+            <div class="arAndEnNuContainer">
+                <ul class="arNuContainer">
+                    <li>٠</li>
+                    <li>١</li>
+                    <li>٢</li>
+                    <li>٣</li>
+                    <li>٤</li>
+                    <li>٥</li>
+                    <li>٦</li>
+                    <li>٧</li>
+                    <li>٨</li>
+                    <li>٩</li>
+                </ul>
+                <ul class="enNuContainer">
+                    <li data-value="٠">0</li>
+                    <li data-value="١">1</li>
+                    <li data-value="٢">2</li>
+                    <li data-value="٣">3</li>
+                    <li data-value="٤">4</li>
+                    <li data-value="٥">5</li>
+                    <li data-value="٦">6</li>
+                    <li data-value="٧">7</li>
+                    <li data-value="٨">8</li>
+                    <li data-value="٩">9</li>
+                </ul>
+            </div>
+        </section>
+    <!-- Tabs section ends here -->
+    <!-- Main section starts here -->
+        <!-- Translate left side section starts here -->
+        <main class="translateContainer">
+            <div class="translate1Container">
+                <div class="langSelectContainer1">
+                    <ul>
+                        <li class="arLangL" data-value="AR">Arabic</li>
+                        <li class="enLangL" data-value="EN">English</li>
+                    </ul>
+                </div>
+                <div class="textareaContainer">
+                    <textarea name="translateSection" id="arTranslateSectionInput" cols="30" rows="7"></textarea>
+                    <i class="fa-solid fa-xmark" id="textClearIcon"></i>
+                </div>
+                <div class="charCountNuIcon">
+                    <p><span class="textCharacters">0</span>/5,000 <i class="fa-regular fa-keyboard" id="arNukeyBoard" title="Arabic Numerals Keypad"></i></p>
+                </div>
+                <!-- <div class="textClearIcon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div> -->
+            </div>
+            <!-- Translate left side section ends here -->
+            <!-- Translate right side section starts here -->
+            <div class="translate1Container">
+                <div class="langSelectContainer1">
+                    <ul>
+                        <li class="enLangR" data-value="EN">English</li>
+                        <li class="arLangR" data-value="AR">Arabic</li>
+                    </ul>
+                </div>
+                <div class="textareaContainer">
+                    <textarea name="translateSection" id="enTranslateSectionInput" cols="30" rows="7" disabled placeholder="Translation"></textarea>
+                </div>
+                <div class="copyTextIconright">
+                    <i><p class="copyFeedback"></p></i>
+                    <i class="fa-regular fa-copy" id="enCopyIcon"></i>
+                </div>
+            </div>
+            <!-- Translate right side section ends here -->
+            <div class="swapIcon">
+                <i class="fa-solid fa-right-left"></i>
+            </div>
+        </main>
+        <div class="translateButtonContainer">
+            <button class="translateButton" type="button">Translate</button>
+            <button class="translateButtonNum" type="button">Translate</button>
+        </div>
+    <!-- Main section ends here -->
+    <!-- Footer section starts here -->
+        <footer>
+            <p>
+                - Built by 
+                <i>Vamsi Mannepalli &nbsp;</i> 
+                <a href="mailto:m.vamsim23@gmail.com" title="m.vamsim23@gmail.com" target="_blank"><small>Send feedback!</small></a>
+            </p>
+        </footer>
+    <!-- Footer section ends here -->
+
+    <script src="main.js"></script>
+</body>
+</html>

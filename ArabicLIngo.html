@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arabic Lingo</title>
+    <link rel="shortcut icon" href="https://imgcdn.stablediffusionweb.com/2024/7/3/f3533321-0386-4381-b6d1-1f4b1d9bc062.jpg" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/7e99a9e738.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@100..400&display=swap");
+
+      :root {
+        --redBorder: 1px solid red;
+        --blackBorder: 1px solid black;
+        --blueBorder: 1px solid blue;
+        --greenBorder: 1px solid green;
+        --navbarBgColor: #2c3e50;
+        --textWhite: #ffff;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        caret-color: transparent;
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+          "Helvetica Neue", sans-serif;
+      }
+
+      /* Navbar section starts here */
+      .navBar {
+        display: flex;
+        background-color: var(--navbarBgColor);
+        color: var(--textWhite);
+        justify-content: space-between;
+        align-items: center;
+        width: 98%;
+        margin: 0.1rem auto;
+        padding: 0.2rem 0.2rem;
+      }
+
+      .logoMainContainer {
+        display: flex;
+        gap: 1rem;
+        width: max-content;
+        margin-left: 0.4rem;
+      }
+
+      .logoMainContainer h3 {
+        margin-right: 0.4rem;
+      }
+
+      .logoContainer {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin: 0.2rem 0.2rem;
+      }
+
+      .logoContainer img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .profileContainer {
+        display: none;
+        border: var(--greenBorder);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin: 0.2rem 0.2rem;
+      }
+
+      .profileContainer img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      /* Navbar section ends here */
+
+      /* Tabs section starts here */
+      .tabsContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.2rem 0.2rem;
+        width: 98%;
+        margin: 0.1rem auto;
+        transition: width 0.8s ease-in-out, margin 0.8s ease-in-out;
+      }
+
+      .tabsList {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+        width: max-content;
+        list-style: none;
+        padding: 0rem 0.2rem;
+        margin-left: 0.4rem;
+        font-size: 1.1rem;
+      }
+
+      .tabsList li {
+        padding: 0.4rem 0.4rem;
+        width: max-content;
+        border-radius: 0.4rem;
+      }
+
+      .textTab {
+        border: 1px solid black;
+        border-bottom: 3px solid skyblue;
+        background-color: var(--navbarBgColor);
+      }
+
+      .textTab a {
+        color: var(--textWhite);
+      }
+
+      .numeralTab a {
+        color: black;
+      }
+
+      .documentTab a {
+        color: black;
+      }
+
+      .textTab i {
+        font-size: 1rem;
+      }
+
+      .numeralTab {
+        border: 1px solid black;
+        border-radius: 0.4rem;
+      }
+
+      .documentTab {
+        border: 1px solid black;
+        border-radius: 0.4rem;
+      }
+
+      .documentTab a {
+        cursor: not-allowed;
+      }
+
+      .tabsList li a {
+        text-decoration: none;
+      }
+
+      .arAndEnNuContainer {
+        display: none;
+        border: 1px solid var(--navbarBgColor);
+        padding: 0.2rem 0.2rem;
+        width: max-content;
+        margin: 0.4rem 0.4rem;
+      }
+
+      .arAndEnNuContainer ul {
+        margin: 0.4rem 0.4rem;
+      }
+
+      .arNuContainer {
+        display: flex;
+        align-items: center;
+        padding: 0.2rem 0.2rem;
+        list-style: none;
+      }
+
+      .arNuContainer li {
+        border: var(--greenBorder);
+        padding: 0.4rem 0.74rem;
+        margin: 0rem 0.2rem;
+      }
+
+      .enNuContainer {
+        display: flex;
+        align-items: center;
+        padding: 0.2rem 0.2rem;
+        list-style: none;
+      }
+
+      .enNuContainer li {
+        border: var(--greenBorder);
+        padding: 0.4rem 0.72rem;
+        margin: 0rem 0.2rem;
+        cursor: pointer;
+      }
+
+      .enNuContainer li:hover {
+        background-color: var(--navbarBgColor);
+        color: var(--textWhite);
+      }
+
+      /* Tabs section ends here */
+      /* Main section starts here */
+      /* Translate left side section starts here */
+      .translateContainer {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+        position: relative;
+        width: 98%;
+        margin: 0.1rem auto;
+        transition: width 0.8s ease-in-out, margin 0.8s ease-in-out;
+      }
+
+      .translate1Container {
+        box-sizing: border-box;
+        margin: 0.1rem auto;
+        width: 49%;
+      }
+
+      .langSelectContainer1 {
+        display: block;
+        /* border: var(--blackBorder); */
+      }
+
+      .langSelectContainer1 ul {
+        display: flex;
+        gap: 0.6rem;
+        list-style: none;
+        padding: 0.2rem 0.2rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .arLangL {
+        border-bottom: 2px solid green;
+      }
+
+      .enLangR {
+        border-bottom: 2px solid green;
+      }
+
+      .enLangR:hover {
+        cursor: not-allowed;
+      }
+
+      .arLangR:hover {
+        cursor: not-allowed;
+      }
+
+      .langSelectContainer1 ul li {
+        padding: 0.4rem 0.4rem;
+        width: max-content;
+        cursor: pointer;
+        margin: 0;
+        margin-left: 0.8rem;
+      }
+
+      #arTranslateSectionInput {
+        text-align: right;
+        resize: none;
+        box-sizing: border-box;
+        border-bottom: none;
+        outline: none;
+        font-size: 1.2rem;
+        border-top-left-radius: 0.6rem;
+        border-top-right-radius: 0.6rem;
+        width: 100%;
+        caret-color: black;
+        padding: 0.4rem;
+        padding-top: 1rem;
+        padding-right: 2rem;
+        scrollbar-color: transparent transparent;
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+          "Helvetica Neue", sans-serif;
+      }
+
+      .charCountNuIcon {
+        border: var(--blackBorder);
+        border-top: none;
+        border-bottom-left-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+        padding: 0.4rem 0.4rem;
+        margin-top: -0.4rem;
+        text-align: end;
+      }
+
+      .charCountNuIcon p {
+        margin: 0;
+        padding-right: 0.2rem;
+      }
+
+      #arNukeyBoard {
+        margin-left: 0.4rem;
+        cursor: pointer;
+      }
+
+      .textareaContainer {
+        position: relative;
+      }
+
+      #textClearIcon {
+        display: none;
+        position: absolute;
+        top: 5%;
+        left: 2%;
+        cursor: pointer;
+      }
+
+      #textClearIcon:hover {
+        color: red;
+      }
+
+      /* Translate left side section ends here */
+      /* Translate right side section starts here */
+      #enTranslateSectionInput {
+        resize: none;
+        box-sizing: border-box;
+        border: var(--blackBorder);
+        border-bottom: none;
+        /* border: none; */
+        outline: none;
+        font-size: 1.2rem;
+        border-top-left-radius: 0.6rem;
+        border-top-right-radius: 0.6rem;
+        width: 100%;
+        /* margin-top: 0.2rem; */
+        padding: 0.4rem;
+        padding-top: 1rem;
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+          "Helvetica Neue", sans-serif;
+      }
+
+      .copyTextIconright {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0.8rem;
+        align-items: center;
+        border: var(--blackBorder);
+        border-top: none;
+        border-bottom-left-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+        padding: 0.5rem 0.4rem;
+        margin-top: -0.4rem;
+        text-align: end;
+      }
+
+      #enCopyIcon {
+        cursor: pointer;
+      }
+
+      .copyTextIconright p {
+        display: none;
+        margin: 0;
+      }
+
+      /* Translate right side section ends here */
+      .swapIcon {
+        display: none;
+        position: absolute;
+        left: 49.4%;
+        top: 12%;
+        cursor: pointer;
+      }
+
+      .translateButtonContainer {
+        width: 98%;
+        margin: 0.2rem auto;
+        padding: 0.2rem 0.2rem;
+        /* margin-bottom: 0.4rem; */
+        transition: width 0.8s ease-in-out, margin 0.8s ease-in-out;
+      }
+
+      .translateButtonContainer button {
+        font-size: 0.84rem;
+        padding: 0.4rem 0.8rem;
+        background-color: var(--navbarBgColor);
+        color: var(--textWhite);
+        border-radius: 0.4rem;
+      }
+
+      .translateButton {
+        /* border: var(--greenBorder); */
+        display: block;
+        cursor: pointer;
+        margin-left: 0.6rem;
+      }
+
+      .translateButtonNum {
+        /* border: var(--greenBorder); */
+        display: none;
+        cursor: pointer;
+        margin-left: 0.6rem;
+      }
+
+      /* Main section ends here */
+      /* Footer section starts here */
+      footer {
+        display: block;
+        position: fixed;
+        right: 0.2rem;
+        bottom: 0.2rem;
+        width: max-content;
+        padding: 0.2rem 0.2rem;
+        margin: 0.1rem auto;
+        text-align: right;
+      }
+
+      footer p {
+        margin: 0.2rem 0.2rem;
+        font-size: 0.9rem;
+      }
+
+      footer p i {
+        color: blue;
+      }
+
+      footer p a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* Footer section ends here */
+
+      /* Media queries starts here */
+      @media (min-width: 1296px) {
+        .tabsContainer {
+          width: 74.2rem;
+          margin: 0.2rem auto;
+          transition: width 0.8s ease-in-out, margin 0.8s ease-in-out;
+        }
+
+        .translateContainer {
+          gap: 0.2rem;
+          width: 74.2rem;
+          margin: 0.2rem auto;
+          transition: width 0.8s ease-in-out, margin 0.8s ease-in-out;
+        }
+
+        .translateButtonContainer {
+          width: 74.2rem;
+          margin: 0.2rem auto;
+          transition: width 0.8s ease-in-out, margin 0.8s ease-in-out;
+        }
+      }
+
+      @media (max-width: 783px) {
+        .tabsContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          padding: 0.2rem 0.2rem;
+          width: 98%;
+          margin: 0.1rem auto;
+        }
+
+        .translateContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 0.4rem;
+          position: relative;
+          width: 98%;
+          margin: 0.1rem auto;
+          padding: 0.2rem 0.2rem;
+        }
+
+        .translate1Container {
+          box-sizing: border-box;
+          padding: 0.2rem 0.2rem;
+          margin: 0.1rem auto;
+          width: 98%;
+        }
+
+        footer {
+          position: sticky;
+        }
+      }
+
+      /* Media queries ends here */
+    </style>
+  </head>
+  <body>
+    <!-- Navbar section starts here -->
+    <nav class="navBar">
+      <div class="logoMainContainer">
+        <div class="logoContainer">
+          <img
+            src="Arabian Lingo Logo.jpeg"
+            alt="No_Img"
+          />
+        </div>
+        <h3><i>A</i>rabian<i>L</i>ingo</h3>
+      </div>
+      <div class="profileContainer">
+        <img src="" alt="No_Img" />
+      </div>
+    </nav>
+    <!-- Navbar section ends here -->
+    <!-- Tabs section starts here -->
+    <section class="tabsContainer">
+      <ul class="tabsList">
+        <li class="textTab">
+          <a href="#"><i class="fa-solid fa-language"></i> Text</a>
+        </li>
+        <li class="numeralTab">
+          <a href="#"><i class="fa-solid fa-arrow-up-1-9"></i> Numerals</a>
+        </li>
+        <li class="documentTab">
+          <a href="#"><i class="fa-solid fa-image"></i> Images</a>
+        </li>
+      </ul>
+      <div class="arAndEnNuContainer">
+        <ul class="arNuContainer">
+          <li>٠</li>
+          <li>١</li>
+          <li>٢</li>
+          <li>٣</li>
+          <li>٤</li>
+          <li>٥</li>
+          <li>٦</li>
+          <li>٧</li>
+          <li>٨</li>
+          <li>٩</li>
+        </ul>
+        <ul class="enNuContainer">
+          <li data-value="٠">0</li>
+          <li data-value="١">1</li>
+          <li data-value="٢">2</li>
+          <li data-value="٣">3</li>
+          <li data-value="٤">4</li>
+          <li data-value="٥">5</li>
+          <li data-value="٦">6</li>
+          <li data-value="٧">7</li>
+          <li data-value="٨">8</li>
+          <li data-value="٩">9</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Tabs section ends here -->
+    <!-- Main section starts here -->
+    <!-- Translate left side section starts here -->
+    <main class="translateContainer">
+      <div class="translate1Container">
+        <div class="langSelectContainer1">
+          <ul>
+            <li class="arLangL" data-value="AR">Arabic</li>
+            <li class="enLangL" data-value="EN">English</li>
+          </ul>
+        </div>
+        <div class="textareaContainer">
+          <textarea
+            name="translateSection"
+            id="arTranslateSectionInput"
+            cols="30"
+            rows="7"
+          ></textarea>
+          <i class="fa-solid fa-xmark" id="textClearIcon"></i>
+        </div>
+        <div class="charCountNuIcon">
+          <p>
+            <span class="textCharacters">0</span>/5,000
+            <i
+              class="fa-regular fa-keyboard"
+              id="arNukeyBoard"
+              title="Arabic Numerals Keypad"
+            ></i>
+          </p>
+        </div>
+        <!-- <div class="textClearIcon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div> -->
+      </div>
+      <!-- Translate left side section ends here -->
+      <!-- Translate right side section starts here -->
+      <div class="translate1Container">
+        <div class="langSelectContainer1">
+          <ul>
+            <li class="enLangR" data-value="EN">English</li>
+            <li class="arLangR" data-value="AR">Arabic</li>
+          </ul>
+        </div>
+        <div class="textareaContainer">
+          <textarea
+            name="translateSection"
+            id="enTranslateSectionInput"
+            cols="30"
+            rows="7"
+            disabled
+            placeholder="Translation"
+          ></textarea>
+        </div>
+        <div class="copyTextIconright">
+          <i><p class="copyFeedback"></p></i>
+          <i class="fa-regular fa-copy" id="enCopyIcon"></i>
+        </div>
+      </div>
+      <!-- Translate right side section ends here -->
+      <div class="swapIcon">
+        <i class="fa-solid fa-right-left"></i>
+      </div>
+    </main>
+    <div class="translateButtonContainer">
+      <button class="translateButton" type="button">Translate</button>
+      <button class="translateButtonNum" type="button">Translate</button>
+    </div>
+    <!-- Main section ends here -->
+    <!-- Footer section starts here -->
+    <footer>
+      <p>
+        - Built by
+        <i>Vamsi Mannepalli &nbsp;</i>
+        <a
+          href="mailto:m.vamsim23@gmail.com"
+          title="m.vamsim23@gmail.com"
+          target="_blank"
+          ><small>Send feedback!</small></a
+        >
+      </p>
+    </footer>
+    <!-- Footer section ends here -->
+
+    <script>
+      // Initializing variables
+      const translateButton = document.querySelector(".translateButton");
+      const translateButtonNum = document.querySelector(".translateButtonNum");
+      const arTranslateSectionInput = document.querySelector(
+        "#arTranslateSectionInput"
+      );
+      const enTranslateSectionInput = document.querySelector(
+        "#enTranslateSectionInput"
+      );
+      const arLangL = document.querySelector(".arLangL");
+      const enLangL = document.querySelector(".enLangL");
+      const enLangR = document.querySelector(".enLangR");
+      const arLangR = document.querySelector(".arLangR");
+      const textCharacters = document.querySelector(".textCharacters");
+      const enCopyIcon = document.querySelector("#enCopyIcon");
+      const copyFeedback = document.querySelector(".copyFeedback");
+      const textTab = document.querySelector(".textTab");
+      const numeralTab = document.querySelector(".numeralTab");
+      const arAndEnNuContainer = document.querySelector(".arAndEnNuContainer");
+      const arNukeyBoard = document.querySelector("#arNukeyBoard");
+      const numeralTabAnchor = document.querySelector(".numeralTab a");
+      const textTabAnchor = document.querySelector(".textTab a");
+      const arNumerals = document.querySelectorAll(".enNuContainer li");
+
+      // Functionallity to toggle visibility of arabic numerals keypad
+      $("#arNukeyBoard").on("click", function () {
+        $(".arAndEnNuContainer").toggle();
+      });
+      // Functionallity to toggle visibility of text inside input area
+      const textClearIcon = document.querySelector("#textClearIcon");
+      arTranslateSectionInput.addEventListener(
+        "input",
+        clearTextIconVisibility
+      );
+
+      function clearTextIconVisibility() {
+        const arTranslateSectionInputValue = arTranslateSectionInput.value;
+        const splittedString = arTranslateSectionInputValue.length;
+        if (arTranslateSectionInputValue === "") {
+          textClearIcon.style.display = "none";
+          enTranslateSectionInput.value = "";
+          enTranslateSectionInput.placeholder = "Translation";
+          textCharacters.textContent = 0;
+        } else {
+          textClearIcon.style.display = "block";
+          textCharacters.textContent = `${splittedString}`;
+        }
+      }
+
+      // Functionallity to clear text inside input area
+      textClearIcon.addEventListener("click", clearText);
+
+      function clearText() {
+        arTranslateSectionInput.value = "";
+        enTranslateSectionInput.value = "";
+        enTranslateSectionInput.placeholder = "Translation";
+        textClearIcon.style.display = "none";
+        textCharacters.textContent = 0;
+      }
+
+      let sourceLanguageAr = "AR";
+      let targetLanguageEn = "EN";
+      // Event listener for changing source to ar and target to en
+      arLangL.addEventListener("click", () => {
+        arTranslateSectionInput.value = "";
+        enTranslateSectionInput.value = "";
+        textClearIcon.style.display = "none";
+        enTranslateSectionInput.placeholder = "Translation";
+        sourceLanguageAr = arLangL.dataset.value;
+        targetLanguageEn = enLangR.dataset.value;
+        enLangL.style.border = "none";
+        arLangR.style.border = "none";
+        arLangL.style.borderBottom = "2px solid green";
+        enLangR.style.borderBottom = "2px solid green";
+        arTranslateSectionInput.style.textAlign = "right";
+        textClearIcon.style.left = "2%";
+        console.log(
+          `Source Lang: ${sourceLanguageAr} | Target Lang: ${targetLanguageEn}`
+        );
+        textCharacters.textContent = 0;
+      });
+
+      // Event listener for changing source to en and target to ar
+      enLangL.addEventListener("click", () => {
+        arTranslateSectionInput.value = "";
+        enTranslateSectionInput.value = "";
+        textClearIcon.style.display = "none";
+        enTranslateSectionInput.placeholder = "Translation";
+        sourceLanguageAr = enLangL.dataset.value;
+        targetLanguageEn = arLangR.dataset.value;
+        arLangL.style.border = "none";
+        enLangR.style.border = "none";
+        enLangL.style.borderBottom = "2px solid green";
+        arLangR.style.borderBottom = "2px solid green";
+        arTranslateSectionInput.style.textAlign = "left";
+        textClearIcon.style.left = "95%";
+        console.log(
+          `Source Lang: ${sourceLanguageAr} | Target Lang: ${targetLanguageEn}`
+        );
+        textCharacters.textContent = 0;
+      });
+
+      // Functionallity to copy text to clipboard;
+      enCopyIcon.addEventListener("click", copyTextToClipBoard);
+
+      function copyTextToClipBoard() {
+        if (enTranslateSectionInput.value.trim() === "") {
+          copyFeedback.textContent = "Translate text to copy!";
+          copyFeedback.style.display = "block";
+          setTimeout(() => {
+            copyFeedback.style.display = "none";
+          }, 1500);
+        } else {
+          enTranslateSectionInput.select();
+          // For mobile devices
+          // enTranslateSectionInput.setSelectRange(0, 99999);
+          // Copy the text through new api method navigator.clipboard.writeText
+          navigator.clipboard
+            .writeText(enTranslateSectionInput.value)
+            .then(() => {
+              copyFeedback.textContent = "Text Copied to clipboard!";
+              copyFeedback.style.display = "block";
+              setTimeout(() => {
+                copyFeedback.style.display = "none";
+              }, 1500);
+            })
+            .catch((err) => {
+              console.log("Could not copy text: ", err);
+              copyFeedback.textContent = "Copy failed! Please try again...";
+              copyFeedback.style.display = "block";
+              setTimeout(() => {
+                copyFeedback.style.display = "none";
+              }, 1500);
+            });
+        }
+      }
+
+      // Functionallity for text to text translation initially
+      // document.addEventListener('DOMContentLoaded', ()=> {
+      translateButton.addEventListener("click", () => {
+        translateText(sourceLanguageAr, targetLanguageEn);
+      });
+      // })
+
+      // Functionallity to transalte text to text on clicking of text tab
+      textTab.addEventListener("click", () => {
+        translateButton.style.display = "block";
+        translateButtonNum.style.display = "none";
+        numeralTab.style.border = "1px solid black";
+        numeralTab.style.borderRadius = "0.4rem";
+        numeralTab.style.backgroundColor = "white";
+        numeralTabAnchor.style.color = "black";
+        textTab.style.border = "1px solid black";
+        textTab.style.borderBottom = "3px solid skyblue";
+        textTab.style.backgroundColor = "#2c3e50";
+        textTabAnchor.style.color = "white";
+        // Functinallity to translate text
+        translateButton.addEventListener("click", () => {
+          translateText(sourceLanguageAr, targetLanguageEn);
+        });
+      });
+
+      function translateText(arabic, english) {
+        const arTranslateSectionInputValue = arTranslateSectionInput.value;
+        if (arTranslateSectionInputValue === "") {
+          alert("Please enter text to translate!");
+          return;
+        } else {
+          apiKey = "83292469-b321-4cd3-9ddb-fd047ff6b60b:fx";
+          const apiUrl = "https://api-free.deepl.com/v2/translate";
+          const sourceText = arTranslateSectionInputValue;
+          const parameters = new URLSearchParams({
+            auth_key: apiKey,
+            text: sourceText,
+            source_lang: arabic,
+            target_lang: english,
+          });
+
+          enTranslateSectionInput.placeholder = "Translating...";
+
+          fetch(`${apiUrl}?${parameters.toString()}`)
+            .then((res) => res.json())
+            .then((data) => {
+              const lang = data.translations[0].detected_source_language;
+              const text = data.translations[0].text;
+              // Consoling out the results
+              console.log("Language code: " + lang);
+              console.log("Translated text: " + text);
+              // Adding result text to english translated area
+              enTranslateSectionInput.value = text;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      }
+
+      // Functionality to handle custom en num... ar num...
+      function translateNumeralsEnToAr() {
+        const arTranslateSectionInputValue = arTranslateSectionInput.value;
+        if (arTranslateSectionInputValue === "") {
+          alert("Please enter numbers to translate!");
+          return;
+        } else {
+          const numeralMap = {
+            0: "٠",
+            1: "١",
+            2: "٢",
+            3: "٣",
+            4: "٤",
+            5: "٥",
+            6: "٦",
+            7: "٧",
+            8: "٨",
+            9: "٩",
+          };
+
+          const numeralRegex = /[0-9]/g;
+          const translatedText = arTranslateSectionInputValue.replace(
+            numeralRegex,
+            (match) => numeralMap[match] || match
+          );
+          enTranslateSectionInput.value = translatedText;
+        }
+      }
+
+      // Functionality to handle custom ar num... en num...
+      function translateNumeralsArToEn() {
+        const arTranslateSectionInputValue = arTranslateSectionInput.value;
+
+        if (arTranslateSectionInputValue === "") {
+          alert("Please enter numbers to translate!");
+          return;
+        } else {
+          const numeralMap = {
+            "٠": "0",
+            "١": "1",
+            "٢": "2",
+            "٣": "3",
+            "٤": "4",
+            "٥": "5",
+            "٦": "6",
+            "٧": "7",
+            "٨": "8",
+            "٩": "9",
+          };
+
+          const numeralRegex = /[٠-٩]/g;
+          const translatedText = arTranslateSectionInputValue.replace(
+            numeralRegex,
+            (match) => numeralMap[match] || match
+          );
+          enTranslateSectionInput.value = translatedText;
+        }
+      }
+
+      // Functionallity to translate numerals to numberals on selecting numerals tab
+      numeralTab.addEventListener("click", () => {
+        translateButton.style.display = "none";
+        translateButtonNum.style.display = "block";
+        textTab.style.border = "1px solid black";
+        textTab.style.borderRadius = "0.4rem";
+        textTab.style.backgroundColor = "white";
+        textTabAnchor.style.color = "black";
+        numeralTab.style.border = "1px solid black";
+        numeralTab.style.borderBottom = "3px solid skyblue";
+        numeralTab.style.backgroundColor = "#2c3e50";
+        numeralTabAnchor.style.color = "white";
+        // Remove text translation button event listener and add numeral translation
+        // translateButton.removeEventListener('click', translateTextDefault);
+        // Functionallity to add arabic numeral in input box
+        function addArabicNumeralListeners() {
+          arNumerals.forEach((numeral) => {
+            numeral.addEventListener("click", arabicNumeralInput);
+          });
+        }
+
+        function arabicNumeralInput(event) {
+          const numeral = event.target;
+          arTranslateSectionInput.value += numeral.dataset.value;
+          textClearIcon.style.display = "block";
+          const arTranslateSectionInputValue = arTranslateSectionInput.value;
+          const splittedString = arTranslateSectionInputValue.length;
+          textCharacters.textContent = `${splittedString}`;
+        }
+
+        addArabicNumeralListeners();
+
+        // Functinallity to add arabic numeral/english number on click of language
+        function addEnglishNumeralListeners() {
+          arNumerals.forEach((numeral) => {
+            numeral.addEventListener("click", englishNumeralInput);
+          });
+        }
+
+        function englishNumeralInput(event) {
+          const numeral = event.target;
+          arTranslateSectionInput.value += numeral.textContent;
+          textClearIcon.style.display = "block";
+          const arTranslateSectionInputValue = arTranslateSectionInput.value;
+          const splittedString = arTranslateSectionInputValue.length;
+          textCharacters.textContent = `${splittedString}`;
+        }
+
+        // Remove all numeral event listeners
+        function removeNumeralListeners() {
+          arNumerals.forEach((numeral) => {
+            numeral.removeEventListener("click", arabicNumeralInput);
+            numeral.removeEventListener("click", englishNumeralInput);
+          });
+        }
+
+        // Initially adding arabicNumerals
+        addArabicNumeralListeners();
+
+        // Functionallity to switch to english numbers on clicking english language
+        enLangL.addEventListener("click", () => {
+          removeNumeralListeners();
+          addEnglishNumeralListeners();
+          textCharacters.textContent = 0;
+        });
+
+        // Functionallity to switch to arabic numerals on clicking english language
+        arLangL.addEventListener("click", () => {
+          removeNumeralListeners();
+          addArabicNumeralListeners();
+          textCharacters.textContent = 0;
+        });
+
+        translateButtonNum.addEventListener("click", () => {
+          if (sourceLanguageAr === "AR" && targetLanguageEn === "EN") {
+            translateNumeralsArToEn();
+          } else if (sourceLanguageAr === "EN" && targetLanguageEn === "AR") {
+            translateNumeralsEnToAr();
+          } else {
+            alert("Please select valid source and target languages!");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
