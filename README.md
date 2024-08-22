@@ -23,4 +23,4 @@ To run the translator locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/arabic-english-translator.git
+   git clone https://github.com/vamsi13538/Arabian_Lingo.git
